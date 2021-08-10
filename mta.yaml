@@ -1,9 +1,13 @@
-_schema-version: 2.1.0
-ID: com.sap.piper.node.hello.world
+ID: cloud-sf-extension-cap-sample
+_schema-version: '2.1'
+parameters:
+  deploy_mode: html5-repo
+
+build-parameters:
+  before-all:
+    - builder: custom
+      commands:
+        - npm install
+        - npx -p @sap/cds-dk cds build --production
 version: 1.0.0
-description: A Hello World sample application
-provider: SAP Sample generator
-modules:
-  - name: piper.node.hello.world
-    type: nodejs
-    path: 
+description: Successfactors Extension Application
